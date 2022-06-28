@@ -4,7 +4,7 @@
 #
 Name     : pypi-google_auth_oauthlib
 Version  : 0.5.2
-Release  : 22
+Release  : 23
 URL      : https://files.pythonhosted.org/packages/1e/92/cd8f07a70ea224de1b4f9b2f2a5f6bf960fe874f0b0f6186fb9c5fcb77e1/google-auth-oauthlib-0.5.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1e/92/cd8f07a70ea224de1b4f9b2f2a5f6bf960fe874f0b0f6186fb9c5fcb77e1/google-auth-oauthlib-0.5.2.tar.gz
 Summary  : Google Authentication Library
@@ -73,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1654896749
+export SOURCE_DATE_EPOCH=1656379120
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,7 +111,7 @@ export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
