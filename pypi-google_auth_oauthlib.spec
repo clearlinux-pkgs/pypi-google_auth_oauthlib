@@ -4,7 +4,7 @@
 #
 Name     : pypi-google_auth_oauthlib
 Version  : 0.8.0
-Release  : 33
+Release  : 34
 URL      : https://files.pythonhosted.org/packages/06/98/52a79d64ca8fd2e37eff8da6c78c26b2209f19d8ace8cafd1634453c4393/google-auth-oauthlib-0.8.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/06/98/52a79d64ca8fd2e37eff8da6c78c26b2209f19d8ace8cafd1634453c4393/google-auth-oauthlib-0.8.0.tar.gz
 Summary  : Google Authentication Library
@@ -17,6 +17,9 @@ Requires: pypi-google_auth_oauthlib-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(google_auth)
 BuildRequires : pypi(requests_oauthlib)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 oauthlib integration for Google Auth
@@ -73,15 +76,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1670890779
+export SOURCE_DATE_EPOCH=1672275830
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
