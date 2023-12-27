@@ -7,7 +7,7 @@
 #
 Name     : pypi-google_auth_oauthlib
 Version  : 1.2.0
-Release  : 39
+Release  : 40
 URL      : https://files.pythonhosted.org/packages/44/77/7433818d44cadd1964473b1d9ab5ecea36e6f951cf2b5188e08f7ebd5dab/google-auth-oauthlib-1.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/44/77/7433818d44cadd1964473b1d9ab5ecea36e6f951cf2b5188e08f7ebd5dab/google-auth-oauthlib-1.2.0.tar.gz
 Summary  : Google Authentication Library
