@@ -1,1 +1,1 @@
-rm -fr %{buildroot}/usr/lib/python3.12/site-packages/{build,docs}
+rm -fr %{buildroot}/usr/lib/python3.*/site-packages/{build,docs}

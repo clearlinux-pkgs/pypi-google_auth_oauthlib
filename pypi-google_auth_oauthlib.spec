@@ -7,7 +7,7 @@
 #
 Name     : pypi-google_auth_oauthlib
 Version  : 1.2.1
-Release  : 45
+Release  : 46
 URL      : https://files.pythonhosted.org/packages/cc/0f/1772edb8d75ecf6280f1c7f51cbcebe274e8b17878b382f63738fd96cee5/google_auth_oauthlib-1.2.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cc/0f/1772edb8d75ecf6280f1c7f51cbcebe274e8b17878b382f63738fd96cee5/google_auth_oauthlib-1.2.1.tar.gz
 Summary  : Google Authentication Library
@@ -79,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1741124714
+export SOURCE_DATE_EPOCH=1741125013
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -137,11 +137,8 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
-## Remove excluded files
-rm -f %{buildroot}*/usr/lib/python3.*/site-packages/docs/__pycache__/conf.cpython-3*.pyc
-rm -f %{buildroot}*/usr/lib/python3.*/site-packages/docs/conf.py
 ## install_append content
-rm -fr %{buildroot}/usr/lib/python3.12/site-packages/{build,docs}
+rm -fr %{buildroot}/usr/lib/python3.*/site-packages/{build,docs}
 ## install_append end
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
